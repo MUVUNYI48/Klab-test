@@ -1,7 +1,13 @@
-import { newsLetter } from "../../models/aboutDB.js";
+import { NewsLetter } from "../../models/aboutDB.js";
 
 export const getOneById = async (req, res) => {
-  let data = await newsLetter.findById(req.params.id);
 
-  res.status(200).json(data);
+  let data = await NewsLetter.findById(req.params.id);
+  if (data) {
+
+    res.status(200).json(data);
+  }else{
+    res.json({message:"data not found"});
+  }
+
 };

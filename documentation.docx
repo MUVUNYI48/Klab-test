@@ -1,0 +1,63 @@
+brief explanation and the general format for each of the mentioned methods:
+
+1. `Model.deleteMany(filter, options)`:
+   - Deletes multiple documents that match the specified filter.
+   - Format: `Model.deleteMany(filter, options)`
+
+2. `Model.deleteOne(filter, options)`:
+   - Deletes a single document that matches the specified filter.
+   - Format: `Model.deleteOne(filter, options)`
+
+3. `Model.find(filter, projection, options)`:
+   - Finds documents that match the specified filter.
+   - Format: `Model.find(filter, projection, options)`
+
+4. `Model.findById(id, projection, options)`:
+   - Finds a document by its unique identifier (ID).
+   - Format: `Model.findById(id, projection, options)`
+
+5. `Model.findByIdAndDelete(id, options)`:
+   - Finds a document by its unique identifier (ID) and deletes it.
+   - Format: `Model.findByIdAndDelete(id, options)`
+
+6. `Model.findByIdAndRemove(id, options)`:
+   - Finds a document by its unique identifier (ID) and removes it.
+   - Format: `Model.findByIdAndRemove(id, options)`
+
+7. `Model.findByIdAndUpdate(id, update, options)`:
+   - Finds a document by its unique identifier (ID) and updates it with the specified update.
+   - Format: `Model.findByIdAndUpdate(id, update, options)`
+
+8. `Model.findOne(filter, projection, options)`:
+   - Finds a single document that matches the specified filter.
+   - Format: `Model.findOne(filter, projection, options)`
+
+9. `Model.findOneAndDelete(filter, options)`:
+   - Finds a single document that matches the specified filter and deletes it.
+   - Format: `Model.findOneAndDelete(filter, options)`
+
+10. `Model.findOneAndRemove(filter, options)`:
+    - Finds a single document that matches the specified filter and removes it.
+    - Format: `Model.findOneAndRemove(filter, options)`
+
+11. `Model.findOneAndReplace(filter, replacement, options)`:
+    - Finds a single document that matches the specified filter and replaces it with the specified replacement.
+    - Format: `Model.findOneAndReplace(filter, replacement, options)`
+
+12. `Model.findOneAndUpdate(filter, update, options)`:
+    - Finds a single document that matches the specified filter and updates it with the specified update.
+    - Format: `Model.findOneAndUpdate(filter, update, options)`
+
+13. `Model.replaceOne(filter, replacement, options)`:
+    - Replaces a single document that matches the specified filter with the specified replacement.
+    - Format: `Model.replaceOne(filter, replacement, options)`
+
+14. `Model.updateMany(filter, update, options)`:
+    - Updates multiple documents that match the specified filter with the specified update.
+    - Format: `Model.updateMany(filter, update, options)`
+
+15. `Model.updateOne(filter, update, options)`:
+    - Updates a single document that matches the specified filter with the specified update.
+    - Format: `Model.updateOne(filter, update, options)`
+
+Please note that the actual format and available options may vary depending on the specific database technology or Object-Document Mapping (ODM) library you are using. The provided formats are general representations.

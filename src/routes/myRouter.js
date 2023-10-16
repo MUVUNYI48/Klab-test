@@ -13,23 +13,28 @@ import {getOneAndDelete} from '../controllers/newsLetter/getOneAndDelete.js'
 import { deleteMany } from '../controllers/newsLetter/deleteMany.js';
 import { signUp } from '../controllers/authentication/signup.js';
 import { login } from '../controllers/authentication/login.js';
-
+import { verifyToken } from '../middleware/verifyToken.js';
+import { changePassword } from '../controllers/authentication/changePassword.js';
 
 const app = express();
 
 app.use(changedTime);
 
-myRouter.get('/', changedTime, getAllLetters);
-myRouter.get('/:id', changedTime, getOneById);
-myRouter.post('/create', postNews);
-myRouter.patch('/patched/:id', patchNewLetter);
-myRouter.delete('/delete/:id', getOneAndDelete);
-myRouter.delete('deleteMany',deleteMany)
-myRouter.put('/update/:id', getOneAndReplace);
+myRouter.get('/:id', changedTime, getOneById);//get one by using id * 👌
+myRouter.get('/', changedTime, getAllLetters);//get all newsLetters * 👌
+myRouter.post('/create', postNews);//create new Letter *👍
+myRouter.patch('/change/:id', patchNewLetter);//change newsLetter by Id 👌
+myRouter.delete('/delete/:id', getOneAndDelete);//delete one * 😂
+myRouter.delete('/deleteMany/:title',deleteMany)//deleteMany newletters * 😁
+myRouter.put('/update/:id', getOneAndReplace);//find one and then replace with the other value
+
+myRouter.use(verifyToken);  
+
 
 //FOR SIGNUP
 
 myRouter.post('/login',login);
 myRouter.post('/signup',signUp);
+myRouter.post("/changepassword",changePassword)
 
 export default myRouter;

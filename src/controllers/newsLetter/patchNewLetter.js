@@ -1,27 +1,16 @@
-// const app = require("../../../server.js");
-// const database = require("../../utils/myDatabase.js");
-
-export const patchNewLetter = (req, res) => {
-  let requestedId = parseInt(req.params.id);
-  // let bodyPatched = req.body;
-  // console.log("patchedBody", bodyPatched);
-
-  // let toBePatched = newsLetter.filter((item) => item.id === requestedId);
-  if (requestedId) {
-    newsLetter.findByIdAndUpdate(requestedId)
-    newsLetter.create(req.body);
-    res.json({ message: 'there is some change ' })
-  } else {
-    res.json({ message: "did not work as expected" });
+import { NewsLetter } from "../../models/newsLetterModel.js";
+export const patchNewLetter =async (req, res) => {
+  try {
+    let requestedId = req.params.id;
+    let updateById= await NewsLetter.findByIdAndUpdate(requestedId, req.body)
+    if (updateById) {
+     
+      res.status(200).json({ message: 'there is some change ' })
+    }
+  } catch (error) {
+    console.log('log from patch', error)
+    
   }
 
-
-
-  // const compareChange = {
-  //   bodyPatched,
-  //   toBePatched,
-  // };
-
-  // res.json({ compareChange });
 };
 

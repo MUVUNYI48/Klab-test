@@ -12,7 +12,7 @@ const app = express();
 const PORT = 8000;
 app.use(bodyParser.json());
 // const router=express.Router();
-app.use('/myRouter',myRouter);
+// app.use('/myRouter',myRouter);
 
 //import controllers
 

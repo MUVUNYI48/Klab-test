@@ -39,7 +39,7 @@ export const login = async (req, res) => {
     });
   } catch (error) {
     console.log('log from login',error.message)
-    res.status(500).json({
+    res.status(200).json({
       message: "Internal Server Error",
     });
   }

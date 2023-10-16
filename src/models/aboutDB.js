@@ -9,5 +9,5 @@ const newsLetterChema=mongoose.Schema({
 });
 
 
-export const newsLetter=mongoose.model('newsLetter',newsLetterChema)
+export const NewsLetter=mongoose.model('newsLetter',newsLetterChema)
 
